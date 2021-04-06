@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@color/cinza"
     >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,18 +21,17 @@
        />
 
 
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:src="@drawable/ic_add"
-        android:contentDescription="submit"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-         />
+        android:contentDescription="submit"
+        android:src="@drawable/ic_add_notas"
+        app:backgroundTint="@color/principal"
+        app:backgroundTintMode="screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

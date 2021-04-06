@@ -4,48 +4,95 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
+
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Editar Nota"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        />
+
 
     <EditText
         android:id="@+id/editar_titulo"
+        android:layout_below="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:fontFamily="sans-serif-light"
-        android:hint="Insere o Título"
-        android:inputType="textAutoComplete"
-        android:layout_margin="15dp"
-        android:textSize="18sp" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:hint="Titulo"
+        android:background="@drawable/roundcorner_2"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"
+
+        android:inputType="textAutoComplete"/>
 
     <EditText
         android:id="@+id/editar_descricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:fontFamily="sans-serif-light"
-        android:hint="Insere o Conteúdo"
         android:inputType="textAutoComplete"
-        android:layout_margin="15dp"
-        android:textSize="18sp" />
+        android:layout_below="@+id/editar_titulo"
+        android:padding="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Texto"
+        android:background="@drawable/roundcorner_2"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"
+
+        />
 
     <Button
         android:id="@+id/button_atualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_below="@+id/editar_descricao"
+
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
         android:text="Editar"
-        android:textColor="@android:color/white"
-        app:backgroundTint="@android:color/holo_green_dark"/>
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+
 
     <Button
         android:id="@+id/button_eliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="Remover"
-        android:textColor="@android:color/white"
-        app:backgroundTint="@android:color/holo_red_light" />
+        android:layout_below="@+id/button_atualizar"
+
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
+        android:text="Eliminar"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/holo_red_light"
+       />
+
+
+
 
 </LinearLayout>

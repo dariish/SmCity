@@ -2,14 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="30px"
     android:background="@color/background">
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/principal"/>
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:textStyle="bold"
-        android:textColor="@color/principal"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:text="Rua primeira">
     </TextView>
@@ -37,8 +46,10 @@
     </TextView>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/principal"/>
+        android:layout_height="1dp"
+        android:background="@color/principal"
+        android:layout_alignParentBottom="true"
+        />
 
 
 
