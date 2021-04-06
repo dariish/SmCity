@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/principal"
+        android:textSize="20dp"
+        android:text="Rua primeira">
+    </TextView>
+    <TextView
+        android:id="@+id/descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rua descricao,etetra o fumo..."
+        android:textColor="@color/white"
+        android:layout_below="@+id/titulo"
+        android:layout_alignLeft="@+id/titulo"
+        android:layout_marginBottom="10dp"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20/12/2020"
+        android:textColor="@color/white"
+        android:layout_alignTop="@id/titulo"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        >
+    </TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/principal"/>
+
+
+
+</RelativeLayout>
