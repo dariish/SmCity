@@ -35,13 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
-
         android:padding="15dp"
-
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-
         android:hint="Palavra-Chave"
         android:background="@drawable/roundcorner_2"
         android:textColor="@color/white"
@@ -68,6 +65,19 @@
         android:id="@+id/passCheck"
         android:checked="false"
         android:layout_below="@+id/login"
+        android:text="Lembrar Password"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+
+        />
+
+    <CheckBox
+        android:id="@+id/passCheck"
+        android:layout_below="@+id/buttonLogin"
         android:text="Lembrar Password"
         android:layout_marginTop="10dp"
         android:layout_centerInParent="true"

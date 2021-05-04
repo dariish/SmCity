@@ -20,7 +20,6 @@ class NotasViewModel(application: Application) : AndroidViewModel(application) {
     val allNotas: LiveData<List<Notas>>
 
     init{
-        // atenção, não esta igual aos outros dois. linha de codigo perigo.
         val notasDao = NotasDB.getDatabase(application).notasDao()
         repository = NotasRepository(notasDao)
         allNotas = repository.allNotas
@@ -41,7 +40,6 @@ class NotasViewModel(application: Application) : AndroidViewModel(application) {
 
 
 /*
-
     val allNotas: LiveData<List<Notas>>
 
     fun insert(notas: Notas) = viewModelScope.launch {
@@ -55,7 +53,5 @@ class NotasViewModelFactory(private val repository: NotasRepository) : ViewModel
             return NotasViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
-
     }
-
  */

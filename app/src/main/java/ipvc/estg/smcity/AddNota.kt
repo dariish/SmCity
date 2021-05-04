@@ -31,7 +31,7 @@ class AddNota  : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button_save)
             button.setOnClickListener{
                 val replyIntent = Intent()
-                if(TextUtils.isEmpty(editTituloView.text) || TextUtils.isEmpty(editDescricaoView.text)){
+                if(TextUtils.isEmpty(editTituloView.text) && TextUtils.isEmpty(editDescricaoView.text)){
                     setResult(Activity.RESULT_CANCELED, replyIntent)
                 }else {
                     val id = editTituloView.id
