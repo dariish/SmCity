@@ -49,7 +49,7 @@
         android:textColorHighlight="@color/white"/>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
@@ -63,6 +63,19 @@
         android:textSize="25sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
+    <CheckBox
+        android:id="@+id/passCheck"
+        android:checked="false"
+        android:layout_below="@+id/login"
+        android:text="Lembrar Password"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+
+        />
 
 
     <Button

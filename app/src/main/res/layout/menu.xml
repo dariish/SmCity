@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="400px"
+        android:layout_marginTop="150px"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/smcity_logo" />
+
+
+    <Button
+        android:id="@+id/mapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
+        android:text="mapa"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+    <Button
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mapa"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
+        android:text="lista"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+    <Button
+        android:id="@+id/reportar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lista"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
+        android:text="reportar"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="Terminar sessão"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:visibility="visible"/>
+
+
+</RelativeLayout>

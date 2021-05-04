@@ -8,20 +8,23 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 import ipvc.estg.smcity.api.EndPoints
+import ipvc.estg.smcity.api.OutputLogin
 import ipvc.estg.smcity.api.ServiceBuilder
-import ipvc.estg.smcity.api.Utilizador
-import okhttp3.Call
-import okhttp3.Response
-import javax.security.auth.callback.Callback
+import retrofit2.Call
+import retrofit2.http.*
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     private var remember = false
-    private lateinit var checkboxRemember : EditText
+    private lateinit var checkboxRemember : CheckBox
 
     private lateinit var editNome : EditText
     private lateinit var editPassword : EditText
@@ -35,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         editNome = findViewById(R.id.username)
         editPassword = findViewById(R.id.password)
-
         checkboxRemember = findViewById(R.id.passCheck)
 
         //Lembrar login ou não
@@ -47,27 +49,55 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-
-
-        val button = findViewById<Button>(R.id.buttonNotas)
-            button.setOnClickListener{
-                val intent = Intent(this, ListaNota::class.java)
+        val notasButton = findViewById<Button>(R.id.buttonNotas)
+        notasButton.setOnClickListener{
+                val intent = Intent(this@MainActivity, ListaNota::class.java)
                 startActivity(intent)
+                finish()
             }
+/*
+        val loginButton = findViewById<Button>(R.id.buttonLogin)
+        loginButton.setOnClickListener{
+            login()
+        }
+*/
     }
 
 
-    fun login(view: View){
+    private fun login(view : View){
+
         val request = ServiceBuilder.buildService(EndPoints::class.java)
-        val nomne = editNome.text.toString()
+        val nome = editNome.text.toString()
         val password = editPassword.text.toString()
-        val checked :  Boolean = checkboxRemember.isChecked
+        val checked = checkboxRemember.isChecked
         val call  = request.login(nome = nome , password = password)
 
-        call.enqueue(object : Callback<OutputLogin>{
-            override fun onResponse(call : Call<List<Utilizador>>, response: Response<List<Utilizador>>)
+        call.enqueue(object : Callback<OutputLogin> {
+            override fun onResponse(call : Call<OutputLogin>, response: Response<OutputLogin>){
+                if(response.isSuccessful){
+                    val c : OutputLogin = response.body()!!
+                            if(nome.isEmpty() || password.isEmpty()){
+                                Toast.makeText(this@MainActivity, "Campos vazios", Toast.LENGTH_SHORT).show()
+                            }else {
+                                if (c.status == "false") {
+                                    Toast.makeText(this@MainActivity, c.MSG, Toast.LENGTH_LONG).show()
+                                } else {
+                                    val sharedPreferences_edit: SharedPreferences.Editor = sharedPreferences.edit()
+                                    sharedPreferences_edit.putString("nome", nome)
+                                    sharedPreferences_edit.putString("password", password)
+                                    sharedPreferences_edit.putBoolean("remember", checked)
+                                    sharedPreferences_edit.apply()
 
-
+                                    val intent = Intent(this@MainActivity, Menu::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                            }
+                }
+            }
+            override fun onFailure(call: Call<OutputLogin>, t: Throwable){
+                Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
         })
 
     }

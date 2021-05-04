@@ -1,9 +1,8 @@
 package ipvc.estg.smcity.api
 
-data class OutputLogin (
+data class Utilizador(
     val id: Int,
     val nome: String,
     val password: String,
-    val status: String,
-    val MSG: String
+    val ocorrencias: Ocorrencia
 )
