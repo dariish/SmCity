@@ -21,6 +21,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    //teste
     private lateinit var sharedPreferences: SharedPreferences
     private var remember = false
     private lateinit var checkboxRemember : CheckBox
