@@ -20,6 +20,7 @@
         <activity android:name=".ListaNota" />
         <activity android:name=".AddNota" />
         <activity android:name=".EditarNota" />
+        <activity android:name=".Menu" />
 
     </application>
 
