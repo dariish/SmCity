@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 public abstract class NotasDB : RoomDatabase() {
     abstract fun notasDao(): NotasDao
 
-   private class WordDatabaseCallback(
+/*   private class WordDatabaseCallback(
         private val scope: CoroutineScope
     ) : RoomDatabase.Callback(){
 
@@ -34,8 +34,7 @@ public abstract class NotasDB : RoomDatabase() {
             }
         }
     }
-
-
+*/
 
 companion object {
     @Volatile
