@@ -23,6 +23,7 @@
         <activity android:name=".EditarNota" />
         <activity android:name=".Menu" />
 
+
     </application>
 
 </manifest>

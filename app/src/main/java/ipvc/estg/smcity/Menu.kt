@@ -10,7 +10,6 @@ class Menu  : AppCompatActivity() {
         setContentView(R.layout.menu)
 
 
-
     }
 
 }

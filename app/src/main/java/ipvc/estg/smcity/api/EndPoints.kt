@@ -8,10 +8,10 @@ interface EndPoints {
 
     //Utilizador
 
-    @GET("/api/utilizador")
+    @GET("api/utilizador")
     fun getUtilizadores(): Call<List<Utilizador>>
 
-    @GET("/api/utilizador/{id}")
+    @GET("api/utilizador/{id}")
     fun getUtilizadorById(@Path("id") id:Int):Call<Utilizador>
 
     @FormUrlEncoded
@@ -22,10 +22,10 @@ interface EndPoints {
 
 
     //Ocorrencia
-    @GET("/api/ocorrencia")
+    @GET("api/ocorrencia")
     fun getOcorrencias(): Call<List<Ocorrencia>>
 
-    @GET("/api/ocorrencia/{id}")
+    @GET("api/ocorrencia/{id}")
     fun getOcorrenciaById(@Path("id") id: Int): Call<Ocorrencia>
 
 
