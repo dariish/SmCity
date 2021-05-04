@@ -55,16 +55,16 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-/*
-        val loginButton = findViewById<Button>(R.id.buttonLogin)
+
+        val loginButton = findViewById<Button>(R.id.login)
         loginButton.setOnClickListener{
             login()
         }
-*/
+
     }
 
 
-    private fun login(view : View){
+    private fun login(){
 
         val request = ServiceBuilder.buildService(EndPoints::class.java)
         val nome = editNome.text.toString()
