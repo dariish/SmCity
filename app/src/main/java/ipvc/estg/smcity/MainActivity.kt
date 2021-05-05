@@ -40,9 +40,11 @@ class MainActivity : AppCompatActivity() {
         editPassword = findViewById(R.id.password)
         checkboxRemember = findViewById(R.id.passCheck)
 
-        //Lembrar login ou não
+        //Cria a variável shareed preferences
         sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE)
         remember = sharedPreferences.getBoolean("remember", false)
+
+        //Verifica o Shared Preferences ativo. Redirecciona para a proxima página imediatamente.
         if(remember){
             val intent = Intent(this@MainActivity, Menu::class.java)
             startActivity(intent)
@@ -64,16 +66,21 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun login(view : View){
-
+        // Crio o retrofit
         val request = ServiceBuilder.buildService(EndPoints::class.java)
+
+        // Variáveis que guardam os textBoxs e o boolean do checkBox
         val nome = editNome.text.toString()
         val password = editPassword.text.toString()
         val checked = checkboxRemember.isChecked
+
+        // Faço o request ao EndPoint
         val call  = request.login(nome = nome , password = password)
 
         call.enqueue(object : Callback<OutputLogin> {
             override fun onResponse(call : Call<OutputLogin>, response: Response<OutputLogin>){
                 if(response.isSuccessful){
+                    // Guardo o response body do OutputLogin da variável c
                     val c : OutputLogin = response.body()!!
                             if(nome.isEmpty() || password.isEmpty()){
                                 Toast.makeText(this@MainActivity, "Campos vazios", Toast.LENGTH_SHORT).show()
@@ -81,6 +88,7 @@ class MainActivity : AppCompatActivity() {
                                 if (c.status == "false") {
                                     Toast.makeText(this@MainActivity, c.MSG, Toast.LENGTH_LONG).show()
                                 } else {
+                                    // Aplico as novas variáveis ao editor sharePreferences e aplico.
                                     val sharedPreferences_edit: SharedPreferences.Editor = sharedPreferences.edit()
                                     sharedPreferences_edit.putString("nome", nome)
                                     sharedPreferences_edit.putString("password", password)
