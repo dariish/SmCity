@@ -24,7 +24,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="50dp"
         android:padding="15dp"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:background="@drawable/roundcorner_2"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -39,7 +39,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:hint="Palavra-Chave"
+        android:hint="@string/password"
         android:background="@drawable/roundcorner_2"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -56,7 +56,7 @@
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
         android:padding="5dp"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textSize="25sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
@@ -66,7 +66,7 @@
     <CheckBox
         android:id="@+id/passCheck"
         android:layout_below="@+id/login"
-        android:text="Lembrar Password"
+        android:text="@string/lembrar"
         android:layout_marginTop="10dp"
         android:layout_centerInParent="true"
         android:textSize="20dp"
@@ -79,10 +79,8 @@
 
     <Button
         android:id="@+id/buttonNotas"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="35dp"
@@ -90,10 +88,8 @@
         android:layout_marginRight="35dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundcorner_3"
-
         android:padding="5dp"
-
-        android:text="Notas"
+        android:text="@string/notas"
         android:textSize="25dp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />

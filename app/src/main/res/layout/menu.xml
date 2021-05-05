@@ -24,7 +24,7 @@
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
         android:padding="5dp"
-        android:text="mapa"
+        android:text="@string/mapa"
         android:textSize="25sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
@@ -40,7 +40,7 @@
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
         android:padding="5dp"
-        android:text="lista"
+        android:text="@string/lista"
         android:textSize="25sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
@@ -56,7 +56,7 @@
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
         android:padding="5dp"
-        android:text="reportar"
+        android:text="@string/reportar"
         android:textSize="25sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
@@ -68,7 +68,7 @@
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="Terminar sessão"
+        android:text="@string/logout"
         android:textColor="@color/white"
         android:clickable="true"
         android:textSize="20dp"

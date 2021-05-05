@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Smcity</string>
+    <string name="notas" translatable="false">Notas</string>
+    <string name="lembrar" translatable="false">Lembrar Password</string>
+    <string name="nome" translatable="false">Nome</string>
+    <string name="password" translatable="false">Palavra-Chave</string>
+    <string name="login" translatable="false">Connectar</string>
+    <string name="criarNota" translatable="false">Criar Nota</string>
+    <string name="titulo" translatable="false">Titulo</string>
+    <string name="texto" translatable="false">Texto</string>
+    <string name="salvar" translatable="false">Salvar</string>
+    <string name="mapa" translatable="false">Mapa</string>
+    <string name="lista" translatable="false">Lista</string>
+    <string name="reportar" translatable="false">Reportar</string>
+    <string name="logout" translatable="false">Terminar Sessão</string>
+    <string name="editarNota" translatable="false">Editar Nota</string>
+    <string name="editar" translatable="false">Editar</string>
+    <string name="eliminar" translatable="false">Eliminar</string>
 </resources>
