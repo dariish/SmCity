@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:hint="@string/nome"
+        android:background="@drawable/roundcorner_2"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:padding="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/password"
+        android:background="@drawable/roundcorner_2"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"/>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="65dp"
+        android:background="@drawable/roundcorner"
+        android:padding="5dp"
+        android:text="@string/login"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+
+
+    <CheckBox
+        android:id="@+id/passCheck"
+        android:layout_below="@+id/login"
+        android:text="@string/lembrar"
+        android:layout_centerInParent="true"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+
+        />
+
+    <Button
+        android:id="@+id/buttonNotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="85dp"
+        android:background="@drawable/roundcorner_3"
+        android:padding="5dp"
+        android:text="@string/notas"
+        android:textSize="25dp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+
+
+
+
+
+</RelativeLayout>
