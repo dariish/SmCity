@@ -28,6 +28,9 @@ interface EndPoints {
     @GET("api/ocorrencia/{id}")
     fun getOcorrenciaById(@Path("id") id: Int): Call<Ocorrencia>
 
+    @GET("api/ocorrenciadescricao")
+    fun getOcorrenciaDescricao(): Call<List<Ocorrencia>>
+
 
 
 

@@ -12,6 +12,9 @@ class Menu  : AppCompatActivity() {
 
     private lateinit var sPreferences: SharedPreferences
     private lateinit var logout : Button
+    private lateinit var notas : Button
+    private lateinit var mapa: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,8 @@ class Menu  : AppCompatActivity() {
         // Logout
         // Chamar o SharedPreferences do Main Activity
         sPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE )
+
+        //Button Logout
         logout = findViewById(R.id.logout)
         logout.setOnClickListener{
             val editor: SharedPreferences.Editor = sPreferences.edit()
@@ -34,9 +39,23 @@ class Menu  : AppCompatActivity() {
             finish()
         }
 
+        //Button notas
+        notas = findViewById<Button>(R.id.notas)
+        notas.setOnClickListener{
+            val intent = Intent(this@Menu, ListaNota::class.java)
+            startActivity(intent)
+        }
 
 
+        mapa = findViewById(R.id.mapa)
+        mapa.setOnClickListener{
+            val intent = Intent(this@Menu, MapsActivity::class.java)
+                startActivity(intent)
+            }
+
+
+
+        }
 
     }
 
-}

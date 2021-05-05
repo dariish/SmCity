@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         notasButton.setOnClickListener{
                 val intent = Intent(this@MainActivity, ListaNota::class.java)
                 startActivity(intent)
-                finish()
             }
 
       val loginButton = findViewById<Button>(R.id.login)
@@ -98,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                                     val intent = Intent(this@MainActivity, Menu::class.java)
                                     startActivity(intent)
                                     finish()
+
                                 }
                             }
                 }

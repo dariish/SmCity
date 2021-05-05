@@ -8,17 +8,16 @@
     <Button
         android:id="@+id/mapa"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp"
-
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
-        android:padding="5dp"
+        android:padding="2dp"
         android:text="@string/mapa"
-        android:textSize="15sp"
+        android:textSize="10sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
 
@@ -32,9 +31,9 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
-        android:padding="5dp"
+        android:padding="2dp"
         android:text="@string/lista"
-        android:textSize="15sp"
+        android:textSize="10sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
 
@@ -48,9 +47,24 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/roundcorner"
-        android:padding="5dp"
+        android:padding="2dp"
         android:text="@string/reportar"
-        android:textSize="15sp"
+        android:textSize="10sp"
+        app:backgroundTint="@android:color/transparent"
+        app:backgroundTintMode="screen" />
+    <Button
+        android:id="@+id/notas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reportar"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/roundcorner"
+        android:padding="2dp"
+        android:text="@string/notas"
+        android:textSize="10sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen" />
 
@@ -58,13 +72,12 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:text="@string/logout"
         android:textColor="@color/white"
-        android:clickable="true"
-        android:textSize="20dp"
+        android:textSize="10sp"
         android:visibility="visible"/>
 
 

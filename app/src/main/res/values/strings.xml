@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Smcity</string>
+    <string name="title_activity_maps">Map</string>
+
+//Traduções da App
     <string name="notas" translatable="false">Notas</string>
     <string name="lembrar" translatable="false">Lembrar Password</string>
     <string name="nome" translatable="false">Nome</string>
@@ -16,5 +19,4 @@
     <string name="editarNota" translatable="false">Editar Nota</string>
     <string name="editar" translatable="false">Editar</string>
     <string name="eliminar" translatable="false">Eliminar</string>
-    <string name="title_activity_maps">Map</string>
 </resources>
