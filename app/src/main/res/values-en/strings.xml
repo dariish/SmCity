@@ -17,4 +17,5 @@
     <string name="editarNota">Update Note</string>
     <string name="editar">Update</string>
     <string name="eliminar">Delete</string>
+    <string name="addOcorrencia">Create Problem</string>
 </resources>

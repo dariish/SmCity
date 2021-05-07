@@ -19,4 +19,5 @@
     <string name="editarNota" translatable="false">Editar Nota</string>
     <string name="editar" translatable="false">Editar</string>
     <string name="eliminar" translatable="false">Eliminar</string>
+    <string name="addOcorrencia" translatable="false">Criar Ocorrencia</string>
 </resources>
