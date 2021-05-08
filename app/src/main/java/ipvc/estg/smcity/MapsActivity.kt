@@ -1,6 +1,9 @@
 package ipvc.estg.smcity
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.content.Intent
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,11 +12,13 @@ import androidx.core.app.ActivityCompat
 
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import android.graphics.Color
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import ipvc.estg.smcity.api.EndPoints
@@ -23,6 +28,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -31,6 +37,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     //Last Known Location
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private val LOCATION_PERMISSION_REQUEST_CODE = 1
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +56,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val call = request.getOcorrencias()
         var posicao : LatLng
 
+        //Vai buscar o sharedPrefernces anterior e pega no id do Utilizador Atual
+        sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE)
+        val idUtilizadorAtual = sharedPreferences.getInt("id", 1)
+
         call.enqueue(object : Callback<List<Ocorrencia>> {
             override fun onResponse(call : Call<List<Ocorrencia>>, response: Response<List<Ocorrencia>>) {
                 if (response.isSuccessful) {
                     // Guardo o response body do OutputLogin da variável c
                     ocorrencias = response.body()!!
                     for(ocorrencia in ocorrencias){
-                        posicao = LatLng(ocorrencia.latitude.toString().toDouble(), ocorrencia.longitude.toString().toDouble())
-                        mMap.addMarker(MarkerOptions().position(posicao).title(ocorrencia.descricao))
+                        posicao = LatLng(ocorrencia.latitude, ocorrencia.longitude)
+                        if(ocorrencia.utilizador_id == idUtilizadorAtual){
+                            mMap.addMarker(MarkerOptions().position(posicao).title(ocorrencia.id.toString()).snippet(ocorrencia.descricao))
+                                    .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                        }else{
+                            mMap.addMarker(MarkerOptions().position(posicao).title(ocorrencia.id.toString()).snippet(ocorrencia.descricao))
+                        }
                     }
                 }
             }
@@ -81,7 +98,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if(ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 11)
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
 
             return
         }else{
