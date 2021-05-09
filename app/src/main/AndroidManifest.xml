@@ -44,6 +44,8 @@
         <activity android:name=".AddNota" />
         <activity android:name=".EditarNota" />
         <activity android:name=".Menu" />
+        <activity android:name=".AddOcorrencia" />
+
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ class Menu  : AppCompatActivity() {
     private lateinit var logout : Button
     private lateinit var notas : Button
     private lateinit var mapa: Button
+    private lateinit var addOcorrencia: Button
 
 
 
@@ -47,12 +48,19 @@ class Menu  : AppCompatActivity() {
         }
 
 
+        //Button mapa
         mapa = findViewById(R.id.mapa)
         mapa.setOnClickListener{
             val intent = Intent(this@Menu, MapsActivity::class.java)
                 startActivity(intent)
             }
 
+        //Button adicionar Ocorrencia
+        addOcorrencia = findViewById(R.id.reportar)
+        addOcorrencia.setOnClickListener{
+            val intent = Intent(this@Menu, AddOcorrencia::class.java)
+            startActivity(intent)
+        }
 
 
         }
